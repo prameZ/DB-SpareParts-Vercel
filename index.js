@@ -57,11 +57,11 @@ app.post("/login", async function Login(req, reply) {
 app.post("/addEmployees", async function AddEmployees(req, reply) {
   const body = req.body;
   console.log("body =>", body);
-  console.log("body.Name =>", req.body.Name);
-  console.log("Surname =>", req.body.Surname);
-  const result = await Employeescollection.insertOne(body);
-  // console.log("Found documents =>", result);
-  reply.send(result);
+  // console.log("body.Name =>", req.body.Name);
+  // console.log("Surname =>", req.body.Surname);
+  // const result = await Employeescollection.insertOne(body);
+  // // console.log("Found documents =>", result);
+  // reply.send(result);
 });
 
 // Get
