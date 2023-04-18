@@ -10,17 +10,13 @@ const Sparepartscollection = require("./models/Spareparts");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(cors());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://db-spare-parts-vercel.vercel.app/addEmployees"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI);
+    app.use(cors());
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
