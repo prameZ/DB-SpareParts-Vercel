@@ -11,12 +11,11 @@ const Sparepartscollection = require("./models/Spareparts");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-    next(); 
-})
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://spare-parts-management-zymy.vercel.app/"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
