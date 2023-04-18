@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const Employeescollection = require("./models/Employees");
 const HistorySparepartsPickupcollection = require("./models/HistorySparepartsPickup");
@@ -9,16 +10,7 @@ const Sparepartscollection = require("./models/Spareparts");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-var cors = require("express-cors");
-
-app.use(
-  cors({
-    allowedOrigins: [
-      "https://spare-parts-management-zymy.vercel.app/",
-      "https://spare-parts-management-zymy.vercel.app/employees/new",
-    ],
-  })
-);
+app.use(cors());
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
