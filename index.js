@@ -11,6 +11,9 @@ const Sparepartscollection = require("./models/Spareparts");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
+const bp = require('body-parser')
+app.use(bp.json())
+app.use(bp.urlencoded({ extended: true }))
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
