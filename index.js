@@ -38,21 +38,22 @@ let SparepartsPickupSubIDSet;
 // /////////////////////////////// Login ///////////////////////////////
 app.post("/login", async function Login(req, reply) {
   const { Username, Password } = req.body;
-  try {
-    const checkUsername = await Employeescollection.findOne({
-      Username: Username,
-    });
-    const checkPassword = await Employeescollection.findOne({
-      Password: Password,
-    });
-    if (checkUsername && checkPassword) {
-      reply.send("exist");
-    } else {
-      reply.send("notexist");
-    }
-  } catch (error) {
-    reply.send("notexist");
-  }
+  console.log(Username)
+  // try {
+  //   const checkUsername = await Employeescollection.findOne({
+  //     Username: Username,
+  //   });
+  //   const checkPassword = await Employeescollection.findOne({
+  //     Password: Password,
+  //   });
+  //   if (checkUsername && checkPassword) {
+  //     reply.send("exist");
+  //   } else {
+  //     reply.send("notexist");
+  //   }
+  // } catch (error) {
+  //   reply.send("notexist");
+  // }
 });
 
 // /////////////////////////////// Employees collection ///////////////////////////////
