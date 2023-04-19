@@ -18,6 +18,8 @@ app.use(bp.urlencoded({ extended: true }))
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
+    // mongodb://127.0.0.1:27017
+    // process.env.MONGO_URI
     const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
@@ -38,32 +40,28 @@ let SparepartsPickupSubIDSet;
 // /////////////////////////////// Login ///////////////////////////////
 app.post("/login", async function Login(req, reply) {
   const { Username, Password } = req.body;
-  console.log(Username)
-  // try {
-  //   const checkUsername = await Employeescollection.findOne({
-  //     Username: Username,
-  //   });
-  //   const checkPassword = await Employeescollection.findOne({
-  //     Password: Password,
-  //   });
-  //   if (checkUsername && checkPassword) {
-  //     reply.send("exist");
-  //   } else {
-  //     reply.send("notexist");
-  //   }
-  // } catch (error) {
-  //   reply.send("notexist");
-  // }
+  try {
+    const checkUsername = await Employeescollection.findOne({
+      Username: Username,
+    });
+    const checkPassword = await Employeescollection.findOne({
+      Password: Password,
+    });
+    if (checkUsername && checkPassword) {
+      reply.send("exist");
+    } else {
+      reply.send("notexist");
+    }
+  } catch (error) {
+    reply.send("notexist");
+  }
 });
 
 // /////////////////////////////// Employees collection ///////////////////////////////
 // Add
 app.post("/addEmployees", async function AddEmployees(req, reply) {
   const body = req.body;
-  console.log("body =>", body);
-  console.log("body.Name =>", req.body.Name);
-  console.log("Surname =>", req.body.Surname);
-  const result = await Employeescollection.insertOne(body);
+  const result = await Employeescollection.create(body);
   // console.log("Found documents =>", result);
   reply.send(result);
 });
@@ -144,7 +142,7 @@ app.post("/deleteEmployees", async function DeleteEmployees(req, reply) {
 // Add
 app.post("/addSparepart", async function AddSparepart(req, reply) {
   const body = req.body;
-  const result = await Sparepartscollection.insertOne(body);
+  const result = await Sparepartscollection.create(body);
   // console.log("Found documents =>", result);
   reply.send(result);
 });
@@ -203,7 +201,7 @@ app.post(
   "/historySparepartPickup",
   async function HistorySparepartPickup(req, reply) {
     const body = req.body;
-    const result = await HistorySparepartsPickupcollection.insertOne(body);
+    const result = await HistorySparepartsPickupcollection.create(body);
     // console.log("Found documents =>", result);
     reply.send(result);
   }
@@ -270,7 +268,7 @@ app.post(
   "/historySparepartReturn",
   async function HistorySparepartReturn(req, reply) {
     const body = req.body;
-    const result = await HistorySparepartsReturncollection.insertOne(body);
+    const result = await HistorySparepartsReturncollection.create(body);
     // console.log("Found documents =>", result);
     reply.send(result);
   }
