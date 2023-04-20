@@ -9,18 +9,20 @@ const HistorySparepartsReturncollection = require("./models/HistorySparepartsRet
 const Sparepartscollection = require("./models/Spareparts");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.use(cors());
 const bp = require('body-parser')
-app.use(bp.json())
-app.use(bp.urlencoded({ extended: true }))
+// app.use(bp.json())
+// app.use(bp.urlencoded({ extended: true }))
+app.use(bp.json({limit: "50mb"}));
+app.use(bp.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
     // mongodb://127.0.0.1:27017
     // process.env.MONGO_URI
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect("mongodb://127.0.0.1:27017");
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
