@@ -9,7 +9,7 @@ const HistorySparepartsReturncollection = require("./models/HistorySparepartsRet
 const Sparepartscollection = require("./models/Spareparts");
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 const bp = require('body-parser')
 // app.use(bp.json())
@@ -22,7 +22,7 @@ const connectDB = async () => {
   try {
     // mongodb://127.0.0.1:27017
     // process.env.MONGO_URI
-    const conn = await mongoose.connect("mongodb://127.0.0.1:27017");
+    const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
