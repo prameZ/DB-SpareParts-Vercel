@@ -16,7 +16,7 @@ const HistorySparepartsReturnSchema = new Schema({
   },
   Brand: {
     type: String,
-    required: true,
+    required: false,
   },
   ReturnAmount: {
     type: Number,
@@ -24,11 +24,11 @@ const HistorySparepartsReturnSchema = new Schema({
   },
   Unit: {
     type: String,
-    required: true,
+    required: false,
   },
   PartCode: {
     type: String,
-    required: true,
+    required: false,
   },
   Image: {
     type: String,

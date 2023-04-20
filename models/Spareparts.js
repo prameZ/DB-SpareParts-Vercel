@@ -16,11 +16,11 @@ const SparepartsSchema = new Schema({
   },
   PartCode: {
     type: String,
-    required: true,
+    required: false,
   },
   Brand: {
     type: String,
-    required: true,
+    required: false,
   },
   No: {
     type: String,
@@ -44,7 +44,7 @@ const SparepartsSchema = new Schema({
   },
   Unit: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

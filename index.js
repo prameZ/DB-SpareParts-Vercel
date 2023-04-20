@@ -9,7 +9,7 @@ const HistorySparepartsReturncollection = require("./models/HistorySparepartsRet
 const Sparepartscollection = require("./models/Spareparts");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.use(cors());
 const bp = require('body-parser')
 app.use(bp.json())
@@ -20,7 +20,7 @@ const connectDB = async () => {
   try {
     // mongodb://127.0.0.1:27017
     // process.env.MONGO_URI
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect("mongodb://127.0.0.1:27017");
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
@@ -33,9 +33,9 @@ app.get("/", (req, res) => {
   res.send({ title: "welcome" });
 });
 
-let SubIDEmployees;
-let SubIDSpareparts;
-let SparepartsPickupSubIDSet;
+var SubIDEmployees;
+var SubIDSpareparts;
+var SparepartsPickupSubIDSet;
 
 // /////////////////////////////// Login ///////////////////////////////
 app.post("/login", async function Login(req, reply) {
@@ -114,7 +114,7 @@ app.post("/findIDEmployees", async function FindSubIDGeneralClerk(req, reply) {
 
   // Passing data another function
   SubIDEmployees = SliceString;
-  UpdateEmployees();
+  // UpdateEmployees();
 });
 app.post("/updateEmployees", async function UpdateEmployees(req, reply) {
   const body = req.body;
@@ -171,7 +171,7 @@ app.post("/findIDSpareparts", async function FindSubIDSpareparts(req, reply) {
 
   // Passing data another function
   SubIDSpareparts = SliceString;
-  UpdateSpareparts();
+  // UpdateSpareparts();
 });
 app.post("/updateSpareparts", async function UpdateSpareparts(req, reply) {
   const body = req.body;
@@ -245,7 +245,7 @@ app.post(
 
     // Passing data another function
     SparepartsPickupSubIDSet = SliceString;
-    UpdateSparepartPickup();
+    // UpdateSparepartPickup();
   }
 );
 app.post(
@@ -554,12 +554,6 @@ app.get(
 // /////////////////////////////// TheMostPickedPart ///////////////////////////////
 app.get("/TheMostPickedPart", async function TheMostPickedPart(req, reply) {
   const findResult = await HistorySparepartsPickupcollection.find();
-
-  if (findResult) {
-    res.json(findResult);
-  } else {
-    res.send("Something went wrong.");
-  }
 
   let findPartNameInData = findResult.map((x) => x.PartName);
   let filterPartNameUniq = findPartNameInData.filter(

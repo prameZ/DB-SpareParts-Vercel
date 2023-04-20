@@ -20,7 +20,7 @@ const HistorySparepartsPickupSchema = new Schema({
   },
   Brand: {
     type: String,
-    required: true,
+    required: false,
   },
   RequisitionAmount: {
     type: Number,
@@ -28,11 +28,11 @@ const HistorySparepartsPickupSchema = new Schema({
   },
   Unit: {
     type: String,
-    required: true,
+    required: false,
   },
   PartCode: {
     type: String,
-    required: true,
+    required: false,
   },
   Image: {
     type: String,
