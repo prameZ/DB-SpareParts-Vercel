@@ -11,11 +11,13 @@ const Sparepartscollection = require("./models/Spareparts");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
-const bp = require('body-parser')
+const bp = require("body-parser");
 // app.use(bp.json())
 // app.use(bp.urlencoded({ extended: true }))
-app.use(bp.json({limit: "50mb"}));
-app.use(bp.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bp.json({ limit: "50mb" }));
+app.use(
+  bp.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 })
+);
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
@@ -43,13 +45,17 @@ var SparepartsPickupSubIDSet;
 app.post("/login", async function Login(req, reply) {
   const { Username, Password } = req.body;
   try {
-    const checkUsername = await Employeescollection.findOne({
+    // const checkUsername = await Employeescollection.findOne({
+    //   Username: Username,
+    // });
+    // const checkPassword = await Employeescollection.findOne({
+    //   Password: Password,
+    // });
+    const checkLogin = await Employeescollection.findOne({
       Username: Username,
-    });
-    const checkPassword = await Employeescollection.findOne({
       Password: Password,
     });
-    if (checkUsername && checkPassword) {
+    if (checkLogin) {
       reply.send("exist");
     } else {
       reply.send("notexist");
