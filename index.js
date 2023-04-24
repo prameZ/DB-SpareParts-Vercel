@@ -466,6 +466,114 @@ app.get(
       month: 11,
     });
 
+    let AmountPartPickupOnJan = PickupOnJan.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnJan = AmountPartPickupOnJan.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnFeb = PickupOnFeb.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnFeb = AmountPartPickupOnFeb.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnMar = PickupOnMar.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnMar = AmountPartPickupOnMar.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnApr = PickupOnApr.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnApr = AmountPartPickupOnApr.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnMay = PickupOnMay.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnMay = AmountPartPickupOnMay.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnJun = PickupOnJun.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnJun = AmountPartPickupOnJun.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnJul = PickupOnJul.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnJul = AmountPartPickupOnJul.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnAug = PickupOnAug.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnAug = AmountPartPickupOnAug.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnSep = PickupOnSep.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnSep = AmountPartPickupOnSep.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnOct = PickupOnOct.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnOct = AmountPartPickupOnOct.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnNov = PickupOnNov.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnNov = AmountPartPickupOnNov.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartPickupOnDec = PickupOnDec.map((x) => x.RequisitionAmount);
+    let SumPartPickupOnDec = AmountPartPickupOnDec.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
     // Return Parts
     const ReturnOnJan = await HistorySparepartsReturncollection.find({
       year: year,
@@ -516,34 +624,142 @@ app.get(
       month: 11,
     });
 
+    let AmountPartReturnOnJan = ReturnOnJan.map((x) => x.ReturnAmount);
+    let SumPartReturnOnJan = AmountPartReturnOnJan.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnFeb = ReturnOnFeb.map((x) => x.ReturnAmount);
+    let SumPartReturnOnFeb = AmountPartReturnOnFeb.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnMar = ReturnOnMar.map((x) => x.ReturnAmount);
+    let SumPartReturnOnMar = AmountPartReturnOnMar.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnApr = ReturnOnApr.map((x) => x.ReturnAmount);
+    let SumPartReturnOnApr = AmountPartReturnOnApr.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnMay = ReturnOnMay.map((x) => x.ReturnAmount);
+    let SumPartReturnOnMay = AmountPartReturnOnMay.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnJun = ReturnOnJun.map((x) => x.ReturnAmount);
+    let SumPartReturnOnJun = AmountPartReturnOnJun.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnJul = ReturnOnJul.map((x) => x.ReturnAmount);
+    let SumPartReturnOnJul = AmountPartReturnOnJul.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnAug = ReturnOnAug.map((x) => x.ReturnAmount);
+    let SumPartReturnOnAug = AmountPartReturnOnAug.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnSep = ReturnOnSep.map((x) => x.ReturnAmount);
+    let SumPartReturnOnSep = AmountPartReturnOnSep.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnOct = ReturnOnOct.map((x) => x.ReturnAmount);
+    let SumPartReturnOnOct = AmountPartReturnOnOct.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnNov = ReturnOnNov.map((x) => x.ReturnAmount);
+    let SumPartReturnOnNov = AmountPartReturnOnNov.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
+    let AmountPartReturnOnDec = ReturnOnDec.map((x) => x.ReturnAmount);
+    let SumPartReturnOnDec = AmountPartReturnOnDec.reduce(function (
+      prev,
+      curr
+    ) {
+      return prev + curr;
+    },
+    0);
+
     let LengthofPickupOnMonth = [
-      PickupOnJan.length,
-      PickupOnFeb.length,
-      PickupOnMar.length,
-      PickupOnApr.length,
-      PickupOnMay.length,
-      PickupOnJun.length,
-      PickupOnJul.length,
-      PickupOnAug.length,
-      PickupOnSep.length,
-      PickupOnOct.length,
-      PickupOnNov.length,
-      PickupOnDec.length,
+      SumPartPickupOnJan,
+      SumPartPickupOnFeb,
+      SumPartPickupOnMar,
+      SumPartPickupOnApr,
+      SumPartPickupOnMay,
+      SumPartPickupOnJun,
+      SumPartPickupOnJul,
+      SumPartPickupOnAug,
+      SumPartPickupOnSep,
+      SumPartPickupOnOct,
+      SumPartPickupOnNov,
+      SumPartPickupOnDec,
     ];
 
     let LengthofReturnOnMonth = [
-      ReturnOnJan.length,
-      ReturnOnFeb.length,
-      ReturnOnMar.length,
-      ReturnOnApr.length,
-      ReturnOnMay.length,
-      ReturnOnJun.length,
-      ReturnOnJul.length,
-      ReturnOnAug.length,
-      ReturnOnSep.length,
-      ReturnOnOct.length,
-      ReturnOnNov.length,
-      ReturnOnDec.length,
+      SumPartReturnOnJan,
+      SumPartReturnOnFeb,
+      SumPartReturnOnMar,
+      SumPartReturnOnApr,
+      SumPartReturnOnMay,
+      SumPartReturnOnJun,
+      SumPartReturnOnJul,
+      SumPartReturnOnAug,
+      SumPartReturnOnSep,
+      SumPartReturnOnOct,
+      SumPartReturnOnNov,
+      SumPartReturnOnDec,
     ];
 
     const resultDay = d.toLocaleDateString("th-TH", {
@@ -564,27 +780,37 @@ app.get("/TheMostPickedPart", async function TheMostPickedPart(req, reply) {
   const findResult = await HistorySparepartsPickupcollection.find();
 
   let findPartNameInData = findResult.map((x) => x.PartName);
+
   let filterPartNameUniq = findPartNameInData.filter(
     (e, i, a) => a.indexOf(e) === i
   );
+
   let DataSortParts = [];
 
   for (let i = 0; i < filterPartNameUniq.length; i++) {
     let filterPartNameUniqData = filterPartNameUniq[i];
     let filterPartNameUniqToString = String(filterPartNameUniqData);
 
-    let filterFindPart = findResult.filter(
-      (x) => x.PartName === filterPartNameUniqToString
+    let findPartNameInData = findResult.filter(
+      (x) => x.PartName === filterPartNameUniq[i]
     );
-    let SumAmount = filterFindPart.length;
+
+    let AmountPartNameInData = findPartNameInData.map(
+      (x) => x.RequisitionAmount
+    );
+    let sum = AmountPartNameInData.reduce(function (prev, curr) {
+      return prev + curr;
+    }, 0);
+
     DataSortParts.push({
       PartName: filterPartNameUniqToString,
-      Amount: SumAmount,
+      Amount: sum,
+    });
+
+    DataSortParts.sort(function (a, b) {
+      return b.Amount - a.Amount;
     });
   }
-  DataSortParts.sort(function (a, b) {
-    return b.Amount - a.Amount;
-  });
   reply.send(DataSortParts);
 });
 
