@@ -7,8 +7,6 @@ First, run the development server:
 
 ```bash
 node index.js
-# or
-nodemon index.js
 ```
 
 ## git repo นี้เป็นในส่วนของ Backend
